@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE09EF902C8755E00024C3BE /* AviasalesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EF8F2C8755E00024C3BE /* AviasalesApp.swift */; };
+		EE09EF942C8755E20024C3BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE09EF932C8755E20024C3BE /* Assets.xcassets */; };
+		EE09EF972C8755E20024C3BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE09EF962C8755E20024C3BE /* Preview Assets.xcassets */; };
+		EE09EF9E2C8755EF0024C3BE /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EF9D2C8755EF0024C3BE /* Flight.swift */; };
+		EE09EFA02C875A7B0024C3BE /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EF9F2C875A7B0024C3BE /* Price.swift */; };
+		EE09EFA32C875A9A0024C3BE /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFA22C875A9A0024C3BE /* RouteInfo.swift */; };
+		EE09EFA52C875AAB0024C3BE /* FlightResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFA42C875AAB0024C3BE /* FlightResponse.swift */; };
+		EE09EFA92C875CE00024C3BE /* FlightsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFA82C875CE00024C3BE /* FlightsListView.swift */; };
+		EE09EFAB2C875D090024C3BE /* FlightDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFAA2C875D090024C3BE /* FlightDetailView.swift */; };
+		EE09EFAF2C87A5930024C3BE /* FlightDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFAE2C87A5930024C3BE /* FlightDetailViewModel.swift */; };
+		EE09EFB12C87A59A0024C3BE /* FlightDetailViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFB02C87A59A0024C3BE /* FlightDetailViewModelImpl.swift */; };
+		EE09EFB52C87A5D20024C3BE /* FlightsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFB42C87A5D20024C3BE /* FlightsListViewModel.swift */; };
+		EE09EFB72C87A5E60024C3BE /* FlightsListViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFB62C87A5E60024C3BE /* FlightsListViewModelImpl.swift */; };
+		EE09EFBB2C87A6FA0024C3BE /* FlightAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFBA2C87A6FA0024C3BE /* FlightAssembly.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EE09EF8C2C8755E00024C3BE /* Aviasales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aviasales.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE09EF8F2C8755E00024C3BE /* AviasalesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviasalesApp.swift; sourceTree = "<group>"; };
+		EE09EF932C8755E20024C3BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE09EF962C8755E20024C3BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE09EF9D2C8755EF0024C3BE /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		EE09EF9F2C875A7B0024C3BE /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		EE09EFA22C875A9A0024C3BE /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
+		EE09EFA42C875AAB0024C3BE /* FlightResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightResponse.swift; sourceTree = "<group>"; };
+		EE09EFA82C875CE00024C3BE /* FlightsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsListView.swift; sourceTree = "<group>"; };
+		EE09EFAA2C875D090024C3BE /* FlightDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailView.swift; sourceTree = "<group>"; };
+		EE09EFAE2C87A5930024C3BE /* FlightDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailViewModel.swift; sourceTree = "<group>"; };
+		EE09EFB02C87A59A0024C3BE /* FlightDetailViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailViewModelImpl.swift; sourceTree = "<group>"; };
+		EE09EFB42C87A5D20024C3BE /* FlightsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsListViewModel.swift; sourceTree = "<group>"; };
+		EE09EFB62C87A5E60024C3BE /* FlightsListViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsListViewModelImpl.swift; sourceTree = "<group>"; };
+		EE09EFBA2C87A6FA0024C3BE /* FlightAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAssembly.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE09EF892C8755E00024C3BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE09EF832C8755E00024C3BE = {
+			isa = PBXGroup;
+			children = (
+				EE09EF8E2C8755E00024C3BE /* Aviasales */,
+				EE09EF8D2C8755E00024C3BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE09EF8D2C8755E00024C3BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EF8C2C8755E00024C3BE /* Aviasales.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE09EF8E2C8755E00024C3BE /* Aviasales */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFA62C875B0F0024C3BE /* App */,
+				EE09EFAC2C875D360024C3BE /* FlightsList */,
+				EE09EFAD2C875D480024C3BE /* FlightDetail */,
+				EE09EFA12C875A880024C3BE /* Models */,
+				EE09EFA72C875B190024C3BE /* Resources */,
+				EE09EF952C8755E20024C3BE /* Preview Content */,
+			);
+			path = Aviasales;
+			sourceTree = "<group>";
+		};
+		EE09EF952C8755E20024C3BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EF962C8755E20024C3BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE09EFA12C875A880024C3BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EF9D2C8755EF0024C3BE /* Flight.swift */,
+				EE09EF9F2C875A7B0024C3BE /* Price.swift */,
+				EE09EFA22C875A9A0024C3BE /* RouteInfo.swift */,
+				EE09EFA42C875AAB0024C3BE /* FlightResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE09EFA62C875B0F0024C3BE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFBA2C87A6FA0024C3BE /* FlightAssembly.swift */,
+				EE09EF8F2C8755E00024C3BE /* AviasalesApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EE09EFA72C875B190024C3BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EF932C8755E20024C3BE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE09EFAC2C875D360024C3BE /* FlightsList */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFB92C87A5F90024C3BE /* View */,
+				EE09EFB82C87A5EA0024C3BE /* ViewModel */,
+			);
+			path = FlightsList;
+			sourceTree = "<group>";
+		};
+		EE09EFAD2C875D480024C3BE /* FlightDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFB32C87A5AD0024C3BE /* View */,
+				EE09EFB22C87A59F0024C3BE /* ViewModel */,
+			);
+			path = FlightDetail;
+			sourceTree = "<group>";
+		};
+		EE09EFB22C87A59F0024C3BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFAE2C87A5930024C3BE /* FlightDetailViewModel.swift */,
+				EE09EFB02C87A59A0024C3BE /* FlightDetailViewModelImpl.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE09EFB32C87A5AD0024C3BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFAA2C875D090024C3BE /* FlightDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE09EFB82C87A5EA0024C3BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFB42C87A5D20024C3BE /* FlightsListViewModel.swift */,
+				EE09EFB62C87A5E60024C3BE /* FlightsListViewModelImpl.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE09EFB92C87A5F90024C3BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE09EFA82C875CE00024C3BE /* FlightsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE09EF8B2C8755E00024C3BE /* Aviasales */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE09EF9A2C8755E20024C3BE /* Build configuration list for PBXNativeTarget "Aviasales" */;
+			buildPhases = (
+				EE09EF882C8755E00024C3BE /* Sources */,
+				EE09EF892C8755E00024C3BE /* Frameworks */,
+				EE09EF8A2C8755E00024C3BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aviasales;
+			productName = Aviasales;
+			productReference = EE09EF8C2C8755E00024C3BE /* Aviasales.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE09EF842C8755E00024C3BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					EE09EF8B2C8755E00024C3BE = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = EE09EF872C8755E00024C3BE /* Build configuration list for PBXProject "Aviasales" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE09EF832C8755E00024C3BE;
+			productRefGroup = EE09EF8D2C8755E00024C3BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE09EF8B2C8755E00024C3BE /* Aviasales */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE09EF8A2C8755E00024C3BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE09EF972C8755E20024C3BE /* Preview Assets.xcassets in Resources */,
+				EE09EF942C8755E20024C3BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE09EF882C8755E00024C3BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE09EFA52C875AAB0024C3BE /* FlightResponse.swift in Sources */,
+				EE09EF9E2C8755EF0024C3BE /* Flight.swift in Sources */,
+				EE09EFB52C87A5D20024C3BE /* FlightsListViewModel.swift in Sources */,
+				EE09EFA92C875CE00024C3BE /* FlightsListView.swift in Sources */,
+				EE09EFAF2C87A5930024C3BE /* FlightDetailViewModel.swift in Sources */,
+				EE09EFBB2C87A6FA0024C3BE /* FlightAssembly.swift in Sources */,
+				EE09EFAB2C875D090024C3BE /* FlightDetailView.swift in Sources */,
+				EE09EFA02C875A7B0024C3BE /* Price.swift in Sources */,
+				EE09EFB72C87A5E60024C3BE /* FlightsListViewModelImpl.swift in Sources */,
+				EE09EFA32C875A9A0024C3BE /* RouteInfo.swift in Sources */,
+				EE09EFB12C87A59A0024C3BE /* FlightDetailViewModelImpl.swift in Sources */,
+				EE09EF902C8755E00024C3BE /* AviasalesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EE09EF982C8755E20024C3BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE09EF992C8755E20024C3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE09EF9B2C8755E20024C3BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Aviasales/Preview Content\"";
+				DEVELOPMENT_TEAM = V6R4C94Z69;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grigorchukanastasiia.Aviasales;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE09EF9C2C8755E20024C3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Aviasales/Preview Content\"";
+				DEVELOPMENT_TEAM = V6R4C94Z69;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grigorchukanastasiia.Aviasales;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE09EF872C8755E00024C3BE /* Build configuration list for PBXProject "Aviasales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE09EF982C8755E20024C3BE /* Debug */,
+				EE09EF992C8755E20024C3BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE09EF9A2C8755E20024C3BE /* Build configuration list for PBXNativeTarget "Aviasales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE09EF9B2C8755E20024C3BE /* Debug */,
+				EE09EF9C2C8755E20024C3BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE09EF842C8755E00024C3BE /* Project object */;
+}

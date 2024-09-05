@@ -30,7 +30,7 @@ struct FlightCardView: View {
             FlightPointView(routeInfo: destination, dateTime: flight.departureDateTime)
         }
         .padding(16)
-        .background(.white)
+        .background(Color.cardColor)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .overlay(
             Group {

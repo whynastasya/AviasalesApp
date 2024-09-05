@@ -32,11 +32,12 @@ struct FlightDetailView<ViewModel: FlightDetailViewModel>: View {
             
             TicketPurchaseButton(price: viewModel.selectedFlight.price) {
                 showAlert = true
+                viewModel.buyTicket(on: viewModel.selectedFlight)
             }
             .padding(8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color.grayScrollView.ignoresSafeArea())
+        .background(Color.backgroundColor.ignoresSafeArea())
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Билет куплен за \(viewModel.selectedFlight.price.formatted)"),

@@ -21,7 +21,7 @@ struct FlightsListView<ViewModel: FlightsListViewModel>: View {
                 if viewModel.isLoading {
                     CustomProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if viewModel.error == .timeout {
+                } else if let error = viewModel.error {
                     ErrorTimeoutView {
                         Task {
                             await viewModel.loadFlights()
@@ -46,7 +46,7 @@ struct FlightsListView<ViewModel: FlightsListViewModel>: View {
                     }
                 }
             }
-            .background(Color.grayScrollView)
+            .background(Color.backgroundColor)
             .navigationTitle("Все билеты")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -54,6 +54,7 @@ struct FlightsListView<ViewModel: FlightsListViewModel>: View {
                     RouteInfoNavigationBar(flightResponse: viewModel.flightsInfo)
                 }
             }
+            .toolbarBackground(Color.backgroundColor, for: .navigationBar)
             .onAppear {
                 Task {
                     await viewModel.loadFlights()

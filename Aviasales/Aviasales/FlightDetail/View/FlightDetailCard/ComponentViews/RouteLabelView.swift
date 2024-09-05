@@ -14,7 +14,7 @@ struct RouteLabelView: View {
     var body: some View {
         Text(arrival + " — " + destination)
             .font(.routeLabel)
-            .foregroundStyle(Color.blackText)
+            .foregroundStyle(Color.titleColor)
             .multilineTextAlignment(.leading)
             .padding(.horizontal, 4)
     }

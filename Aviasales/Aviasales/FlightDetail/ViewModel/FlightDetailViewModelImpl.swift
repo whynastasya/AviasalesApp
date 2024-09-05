@@ -16,7 +16,5 @@ final class FlightDetailViewModelImpl: FlightDetailViewModel {
         self.selectedFlight = selectedFlight
     }
     
-    func buyTicket(on flight: Flight) {
-        
-    }
+    func buyTicket(on flight: Flight) {}
 }

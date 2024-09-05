@@ -17,8 +17,11 @@ final class FlightsListViewModelImpl: FlightsListViewModel {
     )
     @Published var isLoading: Bool = false
     @Published var error: FlightLoadError? = nil
-    
-    private let flightService = FlightService()
+    private let flightService: FlightService
+        
+    init(flightService: FlightService = FlightService()) {
+        self.flightService = flightService
+    }
     
     func loadFlights() async {
         isLoading = true
@@ -62,6 +65,8 @@ final class FlightsListViewModelImpl: FlightsListViewModel {
         }
     }
     
+    //Метод для сортировки и назначения бейджов для полетов - "Оптимальный", "Самый дешевый". 
+    
     private func sortFlights() {
         var sortedFlights = flightsInfo.results.sorted(by: { $0.price.value < $1.price.value })
         
@@ -69,8 +74,12 @@ final class FlightsListViewModelImpl: FlightsListViewModel {
             sortedFlights[cheapestIndex].badge = .cheapest
         }
         
-        if let randomFlightIndex = sortedFlights.indices.randomElement() {
+        if let randomFlightIndex = sortedFlights.indices.filter({ $0 != 0 }).randomElement() {
             sortedFlights[randomFlightIndex].badge = .optimal
+        }
+        
+        if let randomFlightIndex = sortedFlights.indices.filter({ $0 != 0 }).randomElement() {
+            sortedFlights[randomFlightIndex].badge = .convenientTransfer
         }
         
         flightsInfo = FlightResponse(

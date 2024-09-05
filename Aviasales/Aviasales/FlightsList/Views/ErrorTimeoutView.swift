@@ -19,11 +19,11 @@ struct ErrorTimeoutView: View {
             
             Text("Что-то пошло не так")
                 .font(.routeLabel)
-                .foregroundStyle(Color.blackText)
+                .foregroundStyle(.title)
             
             Text("Возможно, пропал интернет, или у нас что-то сломалось. Проверьте подключение или попробуйте позже")
                 .font(.warningText)
-                .foregroundStyle(Color.blackText)
+                .foregroundStyle(.title)
                 .multilineTextAlignment(.center)
             
             Button(action: retryAction) {
@@ -32,7 +32,7 @@ struct ErrorTimeoutView: View {
                     .foregroundStyle(.white)
                     .font(.purchaseButton)
                     .padding(.vertical, 10)
-                    .background(Color.blueProgressView)
+                    .background(.blueProgressView)
                     .clipShape(.rect(cornerRadius: 10))
             }
             .padding(.top, 10)

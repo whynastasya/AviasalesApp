@@ -15,11 +15,11 @@ struct PriceForFlightDetailView: View {
         VStack(spacing: 4) {
             Text(price.formatted)
                 .font(.priceFlightDetail)
-                .foregroundStyle(Color.blackText)
+                .foregroundStyle(.title)
             
             Text("Лучшая цена за \(passengersCount) чел")
                 .font(.warningText)
-                .foregroundStyle(Color.blackText)
+                .foregroundStyle(.title)
         }
     }
 }

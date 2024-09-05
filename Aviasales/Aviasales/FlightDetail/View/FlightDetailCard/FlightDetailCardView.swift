@@ -23,7 +23,7 @@ struct FlightDetailCardView: View {
             }
             .padding([.horizontal, .bottom], 16)
         }
-        .background(.white)
+        .background(Color.cardColor)
         .clipShape(.rect(cornerRadius: 10))
     }
 }

@@ -20,7 +20,7 @@ struct PriceAirlineLogoView: View {
         HStack {
             Text(price.formatted)
                 .font(.price)
-                .foregroundStyle(Color.bluePrice)
+                .foregroundStyle(Color.priceColor)
                 .padding([.top, .bottom], 1.5)
             
             Spacer()

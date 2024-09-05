@@ -25,7 +25,6 @@
 		EE09EFC42C87B6220024C3BE /* Font+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFC32C87B6220024C3BE /* Font+CustomFont.swift */; };
 		EE09EFC72C87B63C0024C3BE /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE09EFC62C87B63C0024C3BE /* SFProText-Semibold.ttf */; };
 		EE09EFC92C87B6480024C3BE /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE09EFC82C87B6480024C3BE /* SFProText-Regular.ttf */; };
-		EE09EFCC2C87B6E00024C3BE /* Color+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFCB2C87B6E00024C3BE /* Color+CustomColor.swift */; };
 		EE09EFCE2C87C42B0024C3BE /* PriceAirlineLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFCD2C87C42B0024C3BE /* PriceAirlineLogoView.swift */; };
 		EE09EFD02C87F22B0024C3BE /* WarningTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFCF2C87F22B0024C3BE /* WarningTextView.swift */; };
 		EE09EFD22C87F6720024C3BE /* FlightPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09EFD12C87F6720024C3BE /* FlightPointView.swift */; };
@@ -44,6 +43,7 @@
 		EE4FCEB22C89F675002030A8 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FCEB12C89F675002030A8 /* CustomProgressView.swift */; };
 		EE4FCEB42C89F7B6002030A8 /* ErrorTimeoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FCEB32C89F7B6002030A8 /* ErrorTimeoutView.swift */; };
 		EE4FCEB62C8A0328002030A8 /* FlightLoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FCEB52C8A0328002030A8 /* FlightLoadError.swift */; };
+		EE4FCEB82C8A0B8E002030A8 /* Color+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FCEB72C8A0B8E002030A8 /* Color+CustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +67,6 @@
 		EE09EFC52C87B6270024C3BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE09EFC62C87B63C0024C3BE /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Semibold.ttf"; sourceTree = "<group>"; };
 		EE09EFC82C87B6480024C3BE /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
-		EE09EFCB2C87B6E00024C3BE /* Color+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CustomColor.swift"; sourceTree = "<group>"; };
 		EE09EFCD2C87C42B0024C3BE /* PriceAirlineLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAirlineLogoView.swift; sourceTree = "<group>"; };
 		EE09EFCF2C87F22B0024C3BE /* WarningTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningTextView.swift; sourceTree = "<group>"; };
 		EE09EFD12C87F6720024C3BE /* FlightPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPointView.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		EE4FCEB12C89F675002030A8 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		EE4FCEB32C89F7B6002030A8 /* ErrorTimeoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTimeoutView.swift; sourceTree = "<group>"; };
 		EE4FCEB52C8A0328002030A8 /* FlightLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLoadError.swift; sourceTree = "<group>"; };
+		EE4FCEB72C8A0B8E002030A8 /* Color+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CustomColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,8 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				EE09EFD32C88C0810024C3BE /* DateFormatterHelper.swift */,
+				EE4FCEB72C8A0B8E002030A8 /* Color+CustomColor.swift */,
 				EE09EFC32C87B6220024C3BE /* Font+CustomFont.swift */,
-				EE09EFCB2C87B6E00024C3BE /* Color+CustomColor.swift */,
 				EE09EFC82C87B6480024C3BE /* SFProText-Regular.ttf */,
 				EE09EFC62C87B63C0024C3BE /* SFProText-Semibold.ttf */,
 				EE09EFE92C8940910024C3BE /* SFProDisplay-Black.ttf */,
@@ -365,12 +365,12 @@
 				EE09EFA52C875AAB0024C3BE /* FlightResponse.swift in Sources */,
 				EE09EFF02C8945290024C3BE /* FlightDetailCardView.swift in Sources */,
 				EE09EFEC2C8941DF0024C3BE /* RouteLabelView.swift in Sources */,
+				EE4FCEB82C8A0B8E002030A8 /* Color+CustomColor.swift in Sources */,
 				EE09EFD02C87F22B0024C3BE /* WarningTextView.swift in Sources */,
 				EE09EF9E2C8755EF0024C3BE /* Flight.swift in Sources */,
 				EE09EFB52C87A5D20024C3BE /* FlightsListViewModel.swift in Sources */,
 				EE09EFA92C875CE00024C3BE /* FlightsListView.swift in Sources */,
 				EE09EFC42C87B6220024C3BE /* Font+CustomFont.swift in Sources */,
-				EE09EFCC2C87B6E00024C3BE /* Color+CustomColor.swift in Sources */,
 				EE09EFAF2C87A5930024C3BE /* FlightDetailViewModel.swift in Sources */,
 				EE09EFBB2C87A6FA0024C3BE /* FlightAssembly.swift in Sources */,
 				EE4FCEB42C89F7B6002030A8 /* ErrorTimeoutView.swift in Sources */,

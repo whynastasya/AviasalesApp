@@ -18,7 +18,7 @@ struct AirlaneView: View {
             
             Text(airlane)
                 .font(.flightCity)
-                .foregroundStyle(Color.blackText)
+                .foregroundStyle(.title)
         }
         .padding(12)
     }

@@ -21,11 +21,11 @@ struct FlightPointView: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(routeInfo.name)
                     .font(.flightCity)
-                    .foregroundStyle(Color.blackText)
+                    .foregroundStyle(.title)
                 
                 Text(routeInfo.iata)
                     .font(.warningText)
-                    .foregroundStyle(Color.grayText)
+                    .foregroundStyle(.callout)
             }
             
             Spacer()
@@ -33,11 +33,11 @@ struct FlightPointView: View {
             VStack(alignment: .trailing, spacing: 2) {
                 Text(DateFormatterHelper.formattedTime(from: dateTime))
                     .font(.flightCity)
-                    .foregroundStyle(Color.blackText)
+                    .foregroundStyle(.title)
                 
                 Text(DateFormatterHelper.formattedDateForFlightCard(from: dateTime))
                     .font(.warningText)
-                    .foregroundStyle(Color.grayText)
+                    .foregroundStyle(.callout)
             }
         }
     }

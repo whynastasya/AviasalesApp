@@ -19,7 +19,7 @@ struct CustomProgressView: View {
 
             Circle()
                 .trim(from: 0.0, to: trimEnd)
-                .stroke(Color.blueProgressView, style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                .stroke(.blueProgressView, style: StrokeStyle(lineWidth: 5, lineCap: .round))
                 .frame(width: 40, height: 40)
                 .rotationEffect(Angle(degrees: isAnimating ? 360 : 0))
                 .animation(Animation.linear(duration: 1.5).repeatForever(autoreverses: false), value: isAnimating)

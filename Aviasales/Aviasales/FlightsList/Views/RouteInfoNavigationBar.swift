@@ -18,21 +18,21 @@ struct RouteInfoNavigationBar: View {
         VStack(spacing: 2) {
             Text(routeText)
                 .font(.flightCity)
-                .foregroundStyle(Color.blackText)
+                .foregroundStyle(.title)
             
             Text(dateAndPassengersText)
                 .font(.dateNavigationBar)
-                .foregroundStyle(Color.grayText)
+                .foregroundStyle(.callout)
         }
     }
     
     private var routeText: String {
-        guard let firstFlight = flightResponse.results.first else { return "" }
+        guard flightResponse.results.first != nil else { return "" }
         return "\(flightResponse.origin.name) — \(flightResponse.destination.name)"
     }
 
     private var dateAndPassengersText: String { 
-        guard let firstFlight = flightResponse.results.first else { return "" }
+        guard flightResponse.results.first != nil else { return "" }
         return "\(DateFormatterHelper.formattedDateForNavigationBar(from: flightResponse.results[0].arrivalDateTime)), \(flightResponse.passengersCount) чел"
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RouteInfo: Decodable {
+struct RouteInfo: Codable {
     let iata: String
     let name: String
 }

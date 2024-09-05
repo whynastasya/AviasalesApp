@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct Flight: Identifiable, Decodable {
+struct Flight: Identifiable, Codable {
     let id: String
-    let departureDateTime: Date
-    let arrivalDateTime: Date
+    let departureDateTime: String
+    let arrivalDateTime: String
     let price: Price
     let airline: String
     let availableTicketsCount: Int
+    var badge: BadgeType?
     
     enum CodingKeys: String, CodingKey {
         case id

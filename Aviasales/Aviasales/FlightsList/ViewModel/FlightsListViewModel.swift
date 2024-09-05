@@ -7,9 +7,11 @@
 
 import Foundation
 
+@MainActor
 protocol FlightsListViewModel: ObservableObject {
-    var flightsInfo: FlightResponse { get }
+    var flightsInfo: FlightResponse { get set }
+    var isLoading: Bool { get set }
+    var error: FlightLoadError? { get set }
     
-    func fetchFlights()
-    func sortFlights()
+    func loadFlights() async
 }

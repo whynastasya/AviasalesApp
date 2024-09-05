@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 final class FlightAssembly {
     func assembleFlightListView() -> some View {
         let viewModel = FlightsListViewModelImpl()

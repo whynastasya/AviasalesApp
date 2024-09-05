@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 @main
 struct AviasalesApp: App {
     private let flightAssembly = FlightAssembly()

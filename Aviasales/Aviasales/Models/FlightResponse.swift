@@ -7,9 +7,16 @@
 
 import Foundation
 
-struct FlightResponse: Decodable {
+struct FlightResponse: Codable {
     let passengersCount: Int
     let origin: RouteInfo
     let destination: RouteInfo
     let results: [Flight]
+    
+    enum CodingKeys: String, CodingKey {
+        case passengersCount = "passengers_count"
+        case origin
+        case destination
+        case results
+    }
 }

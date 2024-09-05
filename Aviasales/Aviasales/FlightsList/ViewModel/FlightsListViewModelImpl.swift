@@ -7,34 +7,77 @@
 
 import Foundation
 
+@MainActor
 final class FlightsListViewModelImpl: FlightsListViewModel {
-    @Published private(set) var flightsInfo: FlightResponse = FlightResponse(
-        passengersCount: 1,
-        origin: RouteInfo(iata: "MOW", name: "Москва"),
-        destination: RouteInfo(iata: "LED", name: "Санкт-Петербург"),
-        results:
-            [Flight(id: "1", departureDateTime: Date(), arrivalDateTime: Date(),
-                    price: Price(currency: "RUB", value: 12341), airline: "S7", availableTicketsCount: 11),
-             Flight(id: "2", departureDateTime: Date(), arrivalDateTime: Date(),
-                     price: Price(currency: "RUB", value: 12341), airline: "S7", availableTicketsCount: 23),
-             Flight(id: "3", departureDateTime: Date(), arrivalDateTime: Date(),
-                     price: Price(currency: "RUB", value: 1341), airline: "S7", availableTicketsCount: 2),
-             Flight(id: "4", departureDateTime: Date(), arrivalDateTime: Date(),
-                     price: Price(currency: "RUB", value: 123), airline: "S7", availableTicketsCount: 3),
-             Flight(id: "5", departureDateTime: Date(), arrivalDateTime: Date(),
-                     price: Price(currency: "RUB", value: 12), airline: "S7", availableTicketsCount: 11),
-             Flight(id: "6", departureDateTime: Date(), arrivalDateTime: Date(),
-                     price: Price(currency: "RUB", value: 12342), airline: "S7", availableTicketsCount: 11)])
+    @Published var flightsInfo: FlightResponse = FlightResponse(
+        passengersCount: 0,
+        origin: RouteInfo(iata: "", name: ""),
+        destination: RouteInfo(iata: "", name: ""),
+        results: []
+    )
+    @Published var isLoading: Bool = false
+    @Published var error: FlightLoadError? = nil
     
-    init() {
-        fetchFlights()
+    private let flightService = FlightService()
+    
+    func loadFlights() async {
+        isLoading = true
+        error = nil
+        
+        do {
+            try await withThrowingTaskGroup(of: Void.self) { group in
+                group.addTask {
+                    let response = try await self.flightService.fetchFlights()
+                    await MainActor.run {
+                        self.flightsInfo = response
+                        self.isLoading = false
+                        self.sortFlights()
+                    }
+                }
+                
+                group.addTask {
+                    try await Task.sleep(nanoseconds: 5000000000)
+                    await MainActor.run {
+                        if self.isLoading {
+                            self.error = .timeout
+                            self.isLoading = false
+                        }
+                    }
+                }
+                
+                try await group.next()
+                
+                if self.isLoading {
+                    await MainActor.run {
+                        self.error = .timeout
+                        self.isLoading = false
+                    }
+                }
+            }
+        } catch {
+            await MainActor.run {
+                self.error = .networkError
+                self.isLoading = false
+            }
+        }
     }
     
-    func fetchFlights() {
+    private func sortFlights() {
+        var sortedFlights = flightsInfo.results.sorted(by: { $0.price.value < $1.price.value })
         
-    }
-    
-    func sortFlights() {
+        if let cheapestIndex = sortedFlights.indices.min(by: { sortedFlights[$0].price.value < sortedFlights[$1].price.value }) {
+            sortedFlights[cheapestIndex].badge = .cheapest
+        }
         
+        if let randomFlightIndex = sortedFlights.indices.randomElement() {
+            sortedFlights[randomFlightIndex].badge = .optimal
+        }
+        
+        flightsInfo = FlightResponse(
+            passengersCount: flightsInfo.passengersCount,
+            origin: flightsInfo.origin,
+            destination: flightsInfo.destination,
+            results: sortedFlights
+        )
     }
 }

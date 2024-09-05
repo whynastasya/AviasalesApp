@@ -16,10 +16,16 @@
 
 ## Скринкаст
 Неудачная загрузка:
+
 https://github.com/user-attachments/assets/a1dc1a08-cc7a-4b1d-8c72-921a170069ba
+
 Успешная загрузка (светлая тема):
+
 https://github.com/user-attachments/assets/4431e4d4-75f9-4eb9-87df-a1ef4da01203
+
 Успешная загрузка (темная тема):
+
 https://github.com/user-attachments/assets/79ad7908-61a8-4f72-aa9e-30b10140bf09
+
 ## Технологии
 - SwiftUI (iOS 16.0)

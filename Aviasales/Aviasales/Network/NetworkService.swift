@@ -20,4 +20,3 @@ final class FlightService {
         return try decoder.decode(FlightResponse.self, from: data)
     }
 }
-

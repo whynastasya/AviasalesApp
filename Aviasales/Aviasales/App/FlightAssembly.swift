@@ -10,12 +10,12 @@ import SwiftUI
 @MainActor
 final class FlightAssembly {
     func assembleFlightListView() -> some View {
-        let viewModel = FlightsListViewModelImpl()
+        let viewModel = FlightsListViewModel(state: .init(status: .error(.networkError))).eraseToAnyViewModel()
         return FlightsListView(viewModel: viewModel)
     }
     
     func assembleFlightDetailView(flightInfo: FlightResponse, selectedFlight: Flight) -> some View {
-        let viewModel = FlightDetailViewModelImpl(flightInfo: flightInfo, selectedFlight: selectedFlight)
+        let viewModel = FlightDetailViewModel(state: .init(flightInfo: flightInfo, selectedFlight: selectedFlight)).eraseToAnyViewModel()
         return FlightDetailView(viewModel: viewModel)
     }
 }

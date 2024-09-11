@@ -7,36 +7,31 @@
 
 import SwiftUI
 
-struct FlightsListView<ViewModel: FlightsListViewModel>: View {
-    @StateObject private var viewModel: ViewModel
+struct FlightsListView: View {
+    @ObservedObject var viewModel: AnyViewModel<FlightsListAction, FlightsListState>
     private let flightAssembly = FlightAssembly()
-
-    init(viewModel: ViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
 
     var body: some View {
         NavigationStack {
             VStack {
-                if viewModel.isLoading {
-                    CustomProgressView()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if let error = viewModel.error {
-                    ErrorTimeoutView {
-                        Task {
-                            await viewModel.loadFlights()
+                switch viewModel.state.status {
+                    case .loading:
+                        CustomProgressView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    case .error(_):
+                        ErrorTimeoutView {
+                            viewModel.trigger(.loadFlights)
                         }
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    case .loaded(let flightResponse):
                     ScrollView {
                         VStack(spacing: 0) {
-                            ForEach(viewModel.flightsInfo.results) { flight in
-                                NavigationLink(destination: flightAssembly.assembleFlightDetailView(flightInfo: viewModel.flightsInfo, selectedFlight: flight)) {
+                            ForEach(flightResponse.results) { flight in
+                                NavigationLink(destination: flightAssembly.assembleFlightDetailView(flightInfo: flightResponse, selectedFlight: flight)) {
                                     FlightCardView(
                                         flight: flight,
-                                        arrival: viewModel.flightsInfo.origin,
-                                        destination: viewModel.flightsInfo.destination
+                                        arrival: flightResponse.origin,
+                                        destination: flightResponse.destination
                                     )
                                     .padding(.horizontal, 16)
                                 }
@@ -50,20 +45,20 @@ struct FlightsListView<ViewModel: FlightsListViewModel>: View {
             .navigationTitle("Все билеты")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    RouteInfoNavigationBar(flightResponse: viewModel.flightsInfo)
+                if case .loaded(let flightResponse) = viewModel.state.status {
+                    ToolbarItem(placement: .principal) {
+                        RouteInfoNavigationBar(flightResponse: flightResponse)
+                    }
                 }
             }
             .toolbarBackground(Color.backgroundColor, for: .navigationBar)
             .onAppear {
-                Task {
-                    await viewModel.loadFlights()
-                }
+                viewModel.trigger(.loadFlights)
             }
         }
     }
 }
 
 #Preview {
-    FlightsListView(viewModel: FlightsListViewModelImpl())
+    FlightsListView(viewModel: MockViewModel(state: .init(status: .loading)).eraseToAnyViewModel())
 }

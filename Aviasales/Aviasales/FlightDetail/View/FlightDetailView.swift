@@ -7,13 +7,9 @@
 
 import SwiftUI
 
-struct FlightDetailView<ViewModel: FlightDetailViewModel>: View {
-    @StateObject private var viewModel: ViewModel
+struct FlightDetailView: View {
+    @ObservedObject var viewModel: AnyViewModel<FlightDetailAction, FlightDetailState>
     @State private var showAlert = false
-    
-    init(viewModel: ViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
     
     var body: some View {
         VStack {
@@ -32,7 +28,7 @@ struct FlightDetailView<ViewModel: FlightDetailViewModel>: View {
             
             TicketPurchaseButton(price: viewModel.selectedFlight.price) {
                 showAlert = true
-                viewModel.buyTicket(on: viewModel.selectedFlight)
+                viewModel.trigger(.buyTicket)
             }
             .padding(8)
         }
@@ -41,15 +37,8 @@ struct FlightDetailView<ViewModel: FlightDetailViewModel>: View {
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Билет куплен за \(viewModel.selectedFlight.price.formatted)"),
-                dismissButton: .default(Text("Отлично"), action: {
-                    viewModel.buyTicket(on: viewModel.selectedFlight)
-                })
+                dismissButton: .default(Text("Отлично"), action: {})
             )
         }
     }
-}
-
-
-#Preview {
-    FlightDetailView(viewModel: FlightDetailViewModelImpl(flightInfo: FlightsListViewModelImpl().flightsInfo, selectedFlight: FlightsListViewModelImpl().flightsInfo.results[3]))
 }

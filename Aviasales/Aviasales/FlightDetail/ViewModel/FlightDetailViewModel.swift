@@ -7,9 +7,19 @@
 
 import Foundation
 
-protocol FlightDetailViewModel: ObservableObject {
-    var flightInfo: FlightResponse { get }
-    var selectedFlight: Flight { get }
+final class FlightDetailViewModel: ViewModel {
+    @Published var state: FlightDetailState
     
-    func buyTicket(on flight: Flight)
+    init(state: FlightDetailState) {
+        self.state = state
+    }
+    
+    func trigger(_ action: FlightDetailAction) {
+        switch action {
+            case .buyTicket:
+                buyTicket()
+        }
+    }
+    
+    private func buyTicket() {}
 }

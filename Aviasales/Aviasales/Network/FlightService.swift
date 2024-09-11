@@ -7,7 +7,8 @@
 
 import Foundation
 
-final class FlightService {
+final class FlightService: Sendable {
+    private let decoder = JSONDecoder()
     private let baseURL = "https://nu.vsepoka.ru/api/search?origin=MOW&destination=LED"
 
     func fetchFlights() async throws -> FlightResponse {
@@ -16,7 +17,6 @@ final class FlightService {
         }
 
         let (data, _) = try await URLSession.shared.data(from: url)
-        let decoder = JSONDecoder()
         return try decoder.decode(FlightResponse.self, from: data)
     }
 }

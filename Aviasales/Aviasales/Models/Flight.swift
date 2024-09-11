@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Flight: Identifiable, Codable {
+struct Flight: Identifiable, Decodable, Equatable {
     let id: String
     let departureDateTime: String
     let arrivalDateTime: String
@@ -23,5 +23,15 @@ struct Flight: Identifiable, Codable {
         case price
         case airline
         case availableTicketsCount = "available_tickets_count"
+    }
+    
+    static func == (lhs: Flight, rhs: Flight) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.departureDateTime == rhs.departureDateTime &&
+        lhs.arrivalDateTime == rhs.arrivalDateTime &&
+        lhs.price == rhs.price &&
+        lhs.airline == rhs.airline &&
+        lhs.availableTicketsCount == rhs.availableTicketsCount &&
+        lhs.badge == rhs.badge
     }
 }

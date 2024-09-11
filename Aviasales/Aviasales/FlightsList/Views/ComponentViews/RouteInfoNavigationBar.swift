@@ -37,6 +37,6 @@ struct RouteInfoNavigationBar: View {
     }
 }
 
-#Preview {
-    RouteInfoNavigationBar(flightResponse: FlightsListViewModelImpl().flightsInfo)
-}
+//#Preview {
+//    RouteInfoNavigationBar(flightResponse: FlightsListViewModel().flightsInfo)
+//}
